@@ -14,7 +14,7 @@ To use the ```standardise_cms_yjs``` function:
 
 Functions implemented:
 
-datacleaning.standardise_cms_yjs: For standardising YJS names in Redshift:
+**datacleaning.standardise_cms_yjs** : For standardising YJS names in Redshift:
 
     # Example where df_cms is a dataset from Redshift and 'yot_name' is the column containing the names to standardise
     df_clean = standardise_cms_yjs(df_cms, 'yot_name') 

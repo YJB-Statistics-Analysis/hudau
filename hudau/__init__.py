@@ -1,2 +1,2 @@
-from check_non_matching_names import standardise_cms_yjs
-from standardise_cms_yjs import check_non_matching_names
+from check_non_matching_names import check_non_matching_names
+from standardise_cms_yjs import standardise_cms_yjs

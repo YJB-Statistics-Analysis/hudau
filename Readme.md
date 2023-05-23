@@ -1,4 +1,5 @@
-# Package for useful functions in Python for the YJB Statistics and Analysis Team
+# Hudau (magic in Welsh)
+Hudau is a package for useful functions in Python for the YJB Statistics and Analysis Team
 
 To install this package run the following command:
 

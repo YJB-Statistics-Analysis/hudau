@@ -52,7 +52,7 @@ def check_non_matching_names(df_cms, yjs_col):
     -------
     A set with the non-matching names if there are or a message confirming there are no non-matches. 
     """   
-    path = os.path.join('data', 'YJS_names_standardised.csv')
+    path = os.path.join('hudau', 'data', 'YJS_names_standardised.csv')
     yot_names = pd.read_csv(path)
     values_yjs_standardised = list(yot_names['yjs_name'].unique())
     values_yots_cms = list(df_cms[yjs_col].unique())

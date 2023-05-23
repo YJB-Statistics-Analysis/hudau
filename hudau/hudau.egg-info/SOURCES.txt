@@ -1,7 +1,0 @@
-setup.py
-hudau/__init__.py
-hudau/datacleaning.py
-hudau.egg-info/PKG-INFO
-hudau.egg-info/SOURCES.txt
-hudau.egg-info/dependency_links.txt
-hudau.egg-info/top_level.txt

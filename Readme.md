@@ -8,7 +8,7 @@ To install this package run the following command:
     
 
 ## Functionality
-### Examples are provided in the documentation
+### Examples are provided in the ```example.md``` file.
 
 **datacleaning.standardise_cms_yjs** : For standardising YJS names in Redshift.
 

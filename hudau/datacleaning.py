@@ -1,5 +1,3 @@
-import os
-
 import pandas as pd
 
 
@@ -35,31 +33,43 @@ def standardise_cms_yjs (df, yjs_col):
     df_cms = df_cms[df_cms[yjs_col].str.contains("Western Bay")!=True]
     return (df_cms)
 
-def check_non_matching_names(df_cms, yjs_col):
+def get_list_unique_labels(df, col_name):
     """
-    Takes a DataFrame object with the naming convention used in Redshift and checks 
-    for non-matching names against the Standardised form.
-    
-
+    Takes a DataFrame object and the column name and gets the unique values and returns a list.
     Parameters
     ----------
-    df_cms: pandas.core.frame.DataFrame
-        A dataframe containing the naming convention used in Redshift.
-    yjs_col: str
-        The name of the date column containing the names of the YJSs.
+    df: pandas.core.frame.DataFrame
+    col_name: str
 
-     
     Returns
     -------
-    A set with the non-matching names if there are or a message confirming there are no non-matches. 
-    """   
-    #print(os.getcwd())
-    path = os.path.join(os.path.dirname(__file__), 'hudau', 'data', 'YJS_names_standardised.csv')
-    yot_names = pd.read_csv(path)
-    values_yjs_standardised = list(yot_names['yjs_name'].unique())
-    values_yots_cms = list(df_cms[yjs_col].unique())
-    in_cms_not_yjs = set(values_yots_cms) -set(values_yjs_standardised)
-    if len(in_cms_not_yjs) == 0:
-        print (f"'All names in the column {yjs_col} match the standardised naming")
-    else:
-        print(f" The following names do not match the standard form {in_cms_not_yjs}")
+    Prints a message confirming there are not any non-matches or prints the values that do not match.
+    """
+    unique_labels = list(df[col_name].unique())
+    return unique_labels
+
+def check_non_matching_values(list_values1, list_values2):
+    """
+    Takes two lists and searches for non-matching values in the two lists.
+    
+    Parameters
+    ----------
+    list_values1: list
+    list_values2: list
+
+    Returns
+    -------
+    Prints a message confirming there are not any non-matches or prints the values that do not match.
+    """
+
+    list_values1_not_list_values2 = set(list_values1) -set(list_values2)
+    list_values2_not_list_values1 = set(list_values2) -set(list_values1)
+    if len(list_values1_not_list_values2) == 0:
+        print (f"All values in the list List 1 match the values in List 2")
+    else: print(f" The following values do not match {list_values1_not_list_values2}")
+
+    if len(list_values2_not_list_values1) == 0:
+        print (f"All values in the list List 2 match the values in List 1")
+    else: print(f" The following values do not match {list_values2_not_list_values1}")
+
+

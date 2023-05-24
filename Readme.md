@@ -7,17 +7,18 @@ To install this package run the following command:
     pip install git+https://github.com/YJB-Statistics-Analysis/hudau.git
     
 
-## Usage examples
+## Functionality
+### Examples are provided in the documentation
 
-**datacleaning.standardise_cms_yjs** : For standardising YJS names in Redshift:
+**datacleaning.standardise_cms_yjs** : For standardising YJS names in Redshift.
 
-    # Example where df_cms is a dataset from Redshift and 'yot_name' is the column containing the names to standardise
-    from hudau.datacleaning import standardise_cms_yjs
-    df_clean = standardise_cms_yjs(df_cms, 'yot_name') 
-    
-**datacleaning.check_non_matching_names** : For changing non matching names against the standardised form for YJS names:
+**datacleaning.get_list_unique_labels** : For getting a list of unique labels from a column in DataFrame.
 
-    # Example where df_cms is a dataset from Redshift and 'yot_name' is the column containing 
-    # the names to check for non matches
-    from hudau.datacleaning import check_non_matching_names
-    check_non_matching_names(df_cms, 'yot_name') 
+**datacleaning.check_non_matching_values** : Compares two lists for non-matching values.
+
+
+## How to contribute
+Create a new branch and add any new function with docstrings and example of usage for the function.
+Depending on the function it can be either added to the existent scripts in ```hudau``` or a new py file can be created.
+Then, please update the Readme.md file adding the function name and a short description.   
+Finally, create a Pull Request to merge with the main branch.

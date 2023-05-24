@@ -33,6 +33,11 @@ def standardise_cms_yjs (df, yjs_col):
     df_cms = df_cms[df_cms[yjs_col].str.contains("Western Bay")!=True]
     return (df_cms)
 
+    # Example where df_cms is a dataset from Redshift and 'yot_name' 
+    # is the column containing the names to standardise
+    # from hudau.datacleaning import standardise_cms_yjs
+    #  df_clean = standardise_cms_yjs(df_cms, 'yot_name') 
+
 def get_list_unique_labels(df, col_name):
     """
     Takes a DataFrame object and the column name and gets the unique values and returns a list.
@@ -47,6 +52,12 @@ def get_list_unique_labels(df, col_name):
     """
     unique_labels = list(df[col_name].unique())
     return unique_labels
+
+    # Example where df_cms is a dataset from Redshift and 'yot_name' is the column containing 
+    # the labels
+    # from hudau.datacleaning import get_list_unique_labels
+    # check_non_matching_names(df_cms, 'yot_name') 
+
 
 def check_non_matching_values(list_values1, list_values2):
     """
@@ -71,5 +82,10 @@ def check_non_matching_values(list_values1, list_values2):
     if len(list_values2_not_list_values1) == 0:
         print (f"All values in the list List 2 match the values in List 1")
     else: print(f" The following values do not match {list_values2_not_list_values1}")
+
+    # Example where 'yot_names' is the list with unique names from a Redshift dataset and 
+    # 'yjs_names' is a list with the standardised names 
+    # from hudau.datacleaning import check_non_matching_values
+    # check_non_matching_names(yot_names, 'yjs_names') 
 
 

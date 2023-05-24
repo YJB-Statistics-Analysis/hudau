@@ -16,9 +16,12 @@ To install this package run the following command:
 
 **datacleaning.check_non_matching_values** : Compares two lists for non-matching values.
 
+**datacleaning.convert_quarter** : Converts the quarter end date to the format 'yyyy-mm-dd', where 'yyyy' is the year of the quarter end and 'mm-dd' represents the last day of the quarter. 
+
+**datacleaning.convert_month** : Converts the month abbreviation to a numeric value.
 
 ## How to contribute
 Create a new branch and add any new function with docstrings and example of usage for the function.
 Depending on the function it can be either added to the existent scripts in ```hudau``` or a new py file can be created.
-Then, please update the examples.md file adding the function name and input and output examples.   
+Then, please update the ```Readme.md``` file with a short description and provide a usage example (input and output) in the the ```examples.md```. 
 Finally, create a Pull Request to merge with the main branch.

@@ -77,11 +77,11 @@ def check_non_matching_values(list_values1, list_values2):
     list_values2_not_list_values1 = set(list_values2) -set(list_values1)
     if len(list_values1_not_list_values2) == 0:
         print (f"All values in the list List 1 match the values in List 2")
-    else: print(f" The following values do not match {list_values1_not_list_values2}")
+    else: print(f" The following from values list_values1 do not match list_values2  {list_values1_not_list_values2}")
 
     if len(list_values2_not_list_values1) == 0:
         print (f"All values in the list List 2 match the values in List 1")
-    else: print(f" The following values do not match {list_values2_not_list_values1}")
+    else: print(f" The following from values list_values2 do not match list_values1 {list_values2_not_list_values1}")
 
     # Example where 'yot_names' is the list with unique names from a Redshift dataset and 
     # 'yjs_names' is a list with the standardised names 

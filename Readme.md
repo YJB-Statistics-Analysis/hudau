@@ -20,5 +20,5 @@ To install this package run the following command:
 ## How to contribute
 Create a new branch and add any new function with docstrings and example of usage for the function.
 Depending on the function it can be either added to the existent scripts in ```hudau``` or a new py file can be created.
-Then, please update the Readme.md file adding the function name and a short description.   
+Then, please update the examples.md file adding the function name and input and output examples.   
 Finally, create a Pull Request to merge with the main branch.

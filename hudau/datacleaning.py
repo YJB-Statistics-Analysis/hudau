@@ -72,4 +72,43 @@ def check_non_matching_values(list_values1, list_values2):
         print (f"All values in the list List 2 match the values in List 1")
     else: print(f" The following values do not match {list_values2_not_list_values1}")
 
+def convert_quarter(quarter_end):
+    """
+    Convert a quarter end date string to yyyy-mm-dd format.
+
+    Parameters:
+    quarter_end (str): A string representing the quarter end date in the format 'mmm-yy', where 'mmm'
+                       is a three-letter abbreviation for the month (e.g., 'Mar') and 'yy' is the last
+                       two digits of the year.
+
+    Returns:
+    str: A string representing the corresponding date in 'yyyy-mm-dd' format, where 'yyyy' is the year
+         of the quarter end and 'mm-dd' represents the last day of the quarter.
+
+         If the input quarter end date string is not recognized, the function returns 'error'.
+    """
+    quarter_dict = {'Mar': '-03-31', 'Jun': '-06-30', 'Sep': '-09-30', 'Dec': '-12-31'}
+    
+    if quarter_end[:3] in quarter_dict:
+        return '20' + quarter_end[-2:] + quarter_dict[quarter_end[:3]]
+    else:
+        return 'error'
+    
+def convert_month(month_abbr):
+    """
+    Convert a three-letter abbreviation of a month to a numeric value.
+
+    Parameters:
+    month_abbr (str): A string representing the three-letter abbreviation of a month (e.g., 'Jan', 'Feb', etc.).
+
+    Returns:
+    int or str: If the input abbreviation is recognized, returns an integer representing the corresponding month (1 for
+               January, 2 for February, etc.). If the input abbreviation is not recognized, returns the string 'error'.
+    """
+    month_dict = {'Apr': '04', 'Jul': '07', 'Oct': '10', 'Jan': '01'}
+    
+    if month_abbr in month_dict:
+        return month_dict[month_abbr]
+    else:
+        return 'error'
 
